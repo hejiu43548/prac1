@@ -1,0 +1,12 @@
+{
+  "model": "microsoft/resnet-18",
+  "device": "mps",
+  "dataset": "MNIST test",
+  "samples": 10000,
+  "metric": "raw ImageNet class-ID match against MNIST digit labels",
+  "label_spaces_aligned": false,
+  "correct": 1,
+  "accuracy_percent": 0.01,
+  "seconds": 18.174,
+  "torch_version": "2.14.0"
+}
