@@ -1,9 +1,28 @@
 aloha
 
-## 学到了什么
+## What I learned
 
-- 学会了使用 Git 克隆仓库、提交修改和推送到 GitHub。
-- 练习了创建分支、合并分支，以及切换到历史版本再回到主分支。
-- 学会了配置 Python 虚拟环境，并使用 Hugging Face 加载预训练 ResNet 模型。
-- 了解了 MNIST 图片需要转换为 RGB，并进行尺寸调整和归一化后才能输入模型。
-- 在 Mac 上使用 MPS 完成了推理。原始类别编号匹配率为 0.01%；由于 ImageNet 类别与 MNIST 数字标签不同，这个结果不代表真正的数字识别准确率。
+### Git and GitHub
+
+I learned to clone a GitHub repository, stage files with git add, commit changes,
+and push commits to the remote repository. I practiced creating the for_fun
+branch, switching branches with checkout, and merging it into main. Since
+for_fun was already an ancestor of main, the merge needed no conflict resolution.
+I also checked out an earlier commit and returned to main. Git log records
+commits, while reflog records local HEAD movements.
+
+### Python environments and Hugging Face
+
+I learned to use a Python virtual environment to isolate dependencies and record
+package versions in requirements.txt. I used Hugging Face Transformers to load
+a pretrained ResNet-18 model and its image processor. The .gitignore file keeps
+the virtual environment out of Git, and model weights and datasets stay outside
+the repository.
+
+### ResNet inference on MNIST
+
+I learned to convert grayscale MNIST images to RGB and resize and normalize them
+for ResNet. I used evaluation mode and disabled gradients for batch inference
+with MPS on my Mac. Processing 10,000 test images took about 18 seconds. The
+raw class-index accuracy was 0.01%. ImageNet classes and MNIST digit labels have
+different meanings, so this is not meaningful digit-recognition accuracy.
